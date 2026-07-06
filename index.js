@@ -502,8 +502,8 @@ function session(options) {
  * @private
  */
 
-function generateSessionId(sess) {
-  return crypto.randomUUID();
+function generateSessionId() {
+  return crypto.randomBytes(24).toString('base64url');
 }
 
 /**
