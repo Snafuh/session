@@ -1,6 +1,8 @@
 unreleased
 ==========
 
+## ⚠️ BREAKING CHANGES
+
   * Replace `uid-safe` with `crypto.randomUUID()` for session ID generation
     - Session IDs are now UUID v4 strings instead of 32-character base64url strings
     - Use the `genid` option to provide a custom generator if you need to keep the previous format,
