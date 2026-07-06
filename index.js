@@ -20,7 +20,6 @@ var deprecate = require('depd')('express-session');
 var onHeaders = require('on-headers')
 var parseUrl = require('parseurl');
 var signature = require('cookie-signature')
-var uid = require('uid-safe').sync
 
 var Cookie = require('./session/cookie')
 var MemoryStore = require('./session/memory')
@@ -504,7 +503,7 @@ function session(options) {
  */
 
 function generateSessionId(sess) {
-  return uid(24);
+  return crypto.randomUUID();
 }
 
 /**

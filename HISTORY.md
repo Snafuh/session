@@ -1,3 +1,11 @@
+unreleased
+==========
+
+  * Replace `uid-safe` with `crypto.randomUUID()` for session ID generation
+    - Session IDs are now UUID v4 strings instead of 32-character base64url strings
+    - Use the `genid` option to provide a custom generator if you need to keep the previous format,
+      e.g. `genid: function () { return crypto.randomBytes(24).toString('base64url') }`
+
 1.18.1 / 2024-10-08
 ==========
 
